@@ -1,0 +1,12 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.wrapper ul, .wrapper li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

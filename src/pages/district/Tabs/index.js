@@ -1,0 +1,39 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-10 14:49:17
+ * @LastEditTime: 2019-08-18 20:44:30
+ * @LastEditors: Please set LastEditors
+ */
+import React from 'react';
+import config from './config';
+import { Tabs,  Grid } from 'antd-mobile';
+import Scroll from '@components/Scroll';
+import ListView from '@/new_components/ListView'
+import './index.scss'
+
+const gridData = Array.from(new Array(15)).map((_val, i) => ({
+  icon: require(`../../../common/imgs/district/${i}.png`),
+  text: '微万州',
+}));
+
+
+const TabExample = () => (
+  <div className="index-tab">
+    <Tabs
+      tabs={config.tabs}
+      {...config.style}
+      initialPage={0}
+      prerenderingSiblingsNumber={0}
+      onChange={(tab, index) => { console.log('onChange', index, tab); }}
+      onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
+    >
+      {/* <Scroll>
+        <Grid data={gridData} columnNum={3} hasLine={false} activeStyle={false} />
+      </Scroll> */}
+      <ListView/>
+    </Tabs>
+  </div>
+);
+
+export default TabExample;

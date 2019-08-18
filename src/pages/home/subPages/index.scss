@@ -1,0 +1,311 @@
+.party-fee{
+    background: #fff;
+    margin-top: 5px;
+    padding-bottom: 20px;
+    .am-list-header{
+        padding: 0;
+    }
+    .fee-header{
+        padding: 12px;
+        line-height: 24px;
+        span{
+            font-size: 16px;
+            color: #333;
+            margin-left: 6px;
+        }
+        img{
+            width: 24px;
+            height: 24px;
+            vertical-align: bottom;
+        }
+        .tip-icon{
+            float: right;
+        }
+    }
+    .select-type-box{
+        height: 50px;
+        padding: 0 15px;
+        span{
+            padding: 18px 0;
+            color: #333;
+            &:first-child{
+                margin-right: 20px;
+            }
+        }
+        .btn{
+            display: inline-block;
+            width: 80px;
+            height: 28px;
+            padding: 0;
+            margin: 10px 0;
+            font-size: 14px;
+            border: 1px solid #CDCDCD;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+            &:last-child{
+                margin-left: 12px;
+            }
+        }
+        .am-button{
+            margin-bottom: 0;
+        }
+        .btn.on{
+            background: #FF523A;
+            color: #fff;
+            border-color: #FF523A;
+        }
+    }
+    .calc-result{
+        font-size: 16px;
+        margin-top: 40px;
+        text-align: center;
+        .result{
+            padding: 0 8px;
+            color: #FF523A;
+        }
+    }
+}
+.tip-modal{
+    width: 320px;
+    .am-modal-body{
+    }
+    .title{
+        color: #333;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    p{
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 16px;
+        text-align: left;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.basic-form{
+    .am-input-label{
+        color:#333!important;
+    }
+    .am-input-control{
+        input{
+            color: #999;
+            font-size: 14px;
+        }
+    }
+    .party-list{
+        padding-left: 15px;
+        background: #fff;
+        .am-list-body{
+            height: 49px;
+            border-bottom: 1px solid #e6e6e6;
+            .am-list-item{
+                padding: 0;
+                .am-list-content{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.member-list{
+    .party-list{
+        .am-list-body{
+            height: auto;
+        }
+        .am-list-line{
+            height: 49px;
+            margin-right: 15px;
+            border-bottom: 1px solid #e6e6e6!important;
+        }
+    }
+}
+
+.my-branch-page{
+    .am-tabs-tab-bar-wrap{
+        border-bottom: 1px solid #e6e6e6;
+    }
+}
+
+.life-service{
+    position: relative;
+    .bg-box{
+        width: 100%;
+        img{
+            width: 100%;
+            float: left;
+        }
+    }
+    .card-item{
+        text-align: center;
+        display: inline-block;
+        float: left;
+    }
+    .icon-list{
+        height: 88px;
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        >div{
+            margin: 0 12px;
+            height: 100%;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow:0px 8px 18px 0px rgba(230,230,230,1);
+        }
+        .card-item{
+            font-size: 14px;
+            width: 25%;
+            padding: 18px 0;
+            img{
+                width: 32%;
+            }
+        }
+    }
+    .img-list{
+        height: 125px;
+        background: #fff;
+        padding-top: 180px;
+        .card-item{
+            width: 33.3%;
+            font-size: 16px;
+            padding-top: 25px;
+            img{
+                width: 36%;
+                margin-bottom: 16px;
+            }
+            p{
+                line-height: 1;
+            }
+        }
+    }
+}
+
+.details-page{
+    padding: 18px 12px 40px 12px;
+    height: 100%;
+    overflow: auto;
+    background: #fff;
+    .title{
+        font-size: 16px;
+        line-height: 20px;
+        color: #333;
+        text-align: center;
+    }
+    .extra-info{
+        margin: 10px 0;
+        min-height: 28px;
+        position: relative;
+        span{
+            color: #999;
+            font-size: 12px;
+            &:first-child{
+                margin-right: 10px;
+            }
+        }
+        img{
+            position: absolute;
+            top: -10px;
+            right: 0;
+            width: 60px;
+            height: 44px;
+        }
+    }
+    .content{
+        font-size: 14px;
+        color: #666;
+        line-height: 18px;
+        p{
+            text-indent: 2em;
+        }
+        img{
+            width: 80%!important;
+            margin: 10px 5%!important;
+        }
+    }
+    .am-button{
+        background: #FFB339;
+        margin: 20px 12px;
+        border-radius: 0;
+        color: #fff;
+    }
+}
+
+.index-page{
+    position: relative;
+    .whole-box{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        .whole-page-img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.login,.change-pwd{
+    .am-list-body{
+        .am-list-line{
+            &:first-child{
+                .am-input-label{
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.login.personal-sugge{
+    background: #fff;
+    height: 100%;
+    .img-bg{
+        width: 100%;
+    }
+    .am-list{
+        margin-top: 46px;
+        padding: 0 12px;
+    }
+    .label-icon{
+        width: 24px;
+        height: 24px;
+    }
+    .am-list-item{
+        border-bottom: 1px solid #ececec!important;
+        height: 50px;
+        padding-left: 0;
+        .am-input-label-5{
+            width: 40px;
+        }
+        .pwd-extra-icon{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .am-button{
+        margin-top: 40px;
+        border-radius: 24px;
+    }
+}
+.personal-box{
+    .am-list-item{
+        border-bottom: 1px solid #ececec!important;
+        padding: 0;
+        margin-left: 15px;
+    }
+}
+
+.details-bg-white{
+    .wrapper{
+        background: #fff;
+    }
+}
