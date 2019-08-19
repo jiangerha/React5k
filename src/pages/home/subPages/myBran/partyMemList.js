@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 21:07:55
+ * @LastEditTime: 2019-08-19 22:58:58
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -38,6 +38,12 @@ class Index extends React.PureComponent{
         const text = pathname === '/myTeamList' ? '我的团队' : pathname === '/partyMemList' ? '党员名单' : pathname === '/demoCommunity' ? '示范社区' : pathname === '/teamMemList' ? '队员名单' : '兴趣小组'
         document.title = `红岩青松-${text}`
         this.queryTable()
+    }
+
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
 
     async queryTable(){
@@ -92,7 +98,7 @@ class Index extends React.PureComponent{
                 <div className="basic-form member-list">
                     <List className="party-list">
                         {
-                            list.map((data,idx) => <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${JSON.stringify(data)}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
+                            list.map((data,idx) => <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${encodeURI(JSON.stringify(data))}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
                         }
                     </List>
                 </div>

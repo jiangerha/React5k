@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-18 10:20:17
+ * @LastEditTime: 2019-08-19 21:15:31
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -26,7 +26,11 @@ class Main extends React.Component {
         isShowPwd:false,
     }
     componentDidMount = () => {
-  }
+      const storage = window.localStorage;
+      const userName = storage.getItem("user_name");
+      const userPwd = storage.getItem("user_pwd");
+      (userName && userPwd) && this.props.history.push('/')
+    }
 
   async login(data){
       Toast.loading('加载中...', 0, null, true)

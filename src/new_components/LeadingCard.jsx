@@ -72,6 +72,12 @@ export default class Main extends React.Component{
         }
     }
 
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
+    }
+
     refreshData = () => {
         const {pagination} = this.state;
         const {currentPage, totalPage} = pagination;

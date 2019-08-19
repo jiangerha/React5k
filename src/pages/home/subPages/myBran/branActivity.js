@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 20:58:47
+ * @LastEditTime: 2019-08-19 21:22:53
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -43,6 +43,13 @@ export default class Main extends React.Component {
           Toast.hide()
       }
   }
+
+  componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+        return;
+        };
+  }
+
   render() {
       const style = {
         lineHeight: '25px',

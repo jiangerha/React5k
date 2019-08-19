@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-19 20:20:53
+ * @LastEditTime: 2019-08-19 22:29:46
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -21,10 +21,22 @@ import HomeImg from '../common/imgs/home-img.png'
 
 
 class App extends Component {
-    state = {
-        isShowImg:false,
+    constructor(){
+        super()
+        const {pathname} = window.location;
+        console.log(window.location,'pathname')
+        const arr = ['/','/login']
+        this.state = {
+            isShowImg:arr.indexOf(pathname) > -1 ? true : false,
+        }
     }
     componentDidMount = () => {
+        // const {history} = window;
+        // if (history && history.pushState) {
+        //     console.log(document.location.pathname,'this')
+        //     history.pushState(null, null, document.URL);
+        //     window.addEventListener('popstate', this.goBack, false);
+        // }
         setTimeout(() => this.setState({isShowImg:false}), 3000);
         this.isLogin()
     }
@@ -34,6 +46,15 @@ class App extends Component {
         const userPwd = storage.getItem("user_pwd");
         (!userName || !userPwd) && this.props.history.push('/login')
     }
+    // goBack(){
+    //     console.log(document.location.pathname,'back')
+    //     const path = document.location.pathname;
+    //     path.indexOf('/index') > -1 && window.history.replaceState(null, null, '')
+    //     // window.history.replaceState(null, null, '/');
+    // }
+    // componentWillUnmount(){
+    //     window.removeEventListener('popstate', this.goBack, false);
+    // }
     render(){
         let pathTF = false;
         const {paths,location, pathname, router} = this.props;
@@ -62,8 +83,8 @@ class App extends Component {
                                 {
                                     Routes.map(({path, component},idx) => <Route key={idx} exact path={path} component={component}></Route>)
                                 }
-                                <Redirect from="/" to="/index/0" />
-                                <Redirect from="/index" to="/index/0" />
+                                {/* <Redirect from="/" to="/index/0" /> */}
+                                {/* <Redirect from="/index" to="/index/0" /> */}
                             {/* </Route> */}
                         </Switch>
                     }

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 22:11:46
- * @LastEditTime: 2019-08-19 20:07:55
+ * @LastEditTime: 2019-08-19 21:23:38
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -67,6 +67,12 @@ class Main extends React.PureComponent {
         }finally{
             Toast.hide()
         }
+    }
+
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
 
     refreshData = () => {

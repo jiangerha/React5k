@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 15:58:19
- * @LastEditTime: 2019-08-19 20:40:45
+ * @LastEditTime: 2019-08-19 21:21:43
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -34,6 +34,12 @@ class Main extends React.PureComponent{
     componentDidMount = () => {
         document.title = '红岩青松-正文详情'
         this.queryDetail()
+    }
+
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
 
     signInDetails = (search) => {

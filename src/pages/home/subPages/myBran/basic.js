@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 20:34:15
+ * @LastEditTime: 2019-08-19 21:22:23
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -85,6 +85,11 @@ class Main extends React.Component {
     }
     componentDidMount = () => {
       this.queryInfo()
+  }
+  componentWillUnmount = () => {
+      this.setState = (state,callback)=>{
+        return;
+      };
   }
 
   async queryInfo(){

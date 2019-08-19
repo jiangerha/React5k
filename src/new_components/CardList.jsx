@@ -36,7 +36,7 @@ const CardItem = (props) => {
                 </div>
             </div>
             <div className="card-img-right">
-            <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888/tianti-module-admin${coverImageUrl}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
+            <img ref={ref => this.img = ref} src={coverImageUrl && `http://113.125.49.13:8888/tianti-module-admin${coverImageUrl}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
             </div>
         </div>
     )
@@ -54,6 +54,12 @@ export default class Main extends React.PureComponent{
 
     componentDidMount = () => {
         this.queryTable()
+    }
+
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
 
     async queryTable(){

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 20:58:50
+ * @LastEditTime: 2019-08-19 21:22:08
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -35,6 +35,13 @@ export default class Main extends React.Component {
           Toast.fail(msg,2)
       }
   }
+
+  componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+        return;
+        };
+   }
+
   render() {
       const {isTeam, history} = this.props;
     return (

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 21:33:05
- * @LastEditTime: 2019-08-12 21:32:23
+ * @LastEditTime: 2019-08-19 23:00:19
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -25,6 +25,7 @@ class NavFooter extends React.Component {
 
     state = {
         selectedTab: 'index',
+        selectedNav:''
     }
 
     componentWillMount(){
@@ -32,6 +33,20 @@ class NavFooter extends React.Component {
         this.setState({
             selectedTab: pathname === '/' ? 'index' : pathname.split("/")[1]
         })
+        this.changeTab()
+    }
+
+    changeTab(){
+        window.addEventListener("popstate", () => { 
+            const {pathname} = window.location;
+            this.setState({selectedNav:pathname})
+        }, false); 
+    }
+
+    componentWillUnmount = () => {
+        this.setState = (state,callback)=>{
+          return;
+        };
     }
 
     /**
@@ -51,6 +66,7 @@ class NavFooter extends React.Component {
 
     render() {
         const {path} = this.props;
+        const {selectedNav, selectedTab} = this.state;
         return (
             <TabBar {...style}>
                 {
@@ -62,7 +78,7 @@ class NavFooter extends React.Component {
                                 title={title}
                                 icon={this.renderNavIcon(icon)}
                                 selectedIcon={this.renderNavIcon(selectedIcon)}
-                                selected={path ? this.calcPath(path) === v.key : this.state.selectedTab === v.key}
+                                selected={path ? this.calcPath(path) === v.key : selectedNav ? selectedNav.indexOf(v.key) > -1 : selectedTab === v.key}
                                 onPress={() => {
                                     this.setState({
                                         selectedTab: v.key,
