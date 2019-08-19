@@ -252,13 +252,10 @@
   line-height: 18px;
 }
 
-.details-page .content p {
-  text-indent: 2em;
-}
-
 .details-page .content img {
-  width: 80% !important;
+  width: 90% !important;
   margin: 10px 5% !important;
+  height: auto !important;
 }
 
 .details-page .am-button {
@@ -266,6 +263,13 @@
   margin: 20px 12px;
   border-radius: 0;
   color: #fff;
+}
+
+.details-page .author {
+  margin: 10px 0;
+  color: #666;
+  display: inline-block;
+  line-height: 14px;
 }
 
 .index-page {

@@ -220,12 +220,10 @@
         font-size: 14px;
         color: #666;
         line-height: 18px;
-        p{
-            text-indent: 2em;
-        }
         img{
-            width: 80%!important;
+            width: 90%!important;
             margin: 10px 5%!important;
+            height: auto!important;
         }
     }
     .am-button{
@@ -233,6 +231,12 @@
         margin: 20px 12px;
         border-radius: 0;
         color: #fff;
+    }
+    .author{
+        margin: 10px 0;
+        color: #666;
+        display: inline-block;
+        line-height: 14px;
     }
 }
 

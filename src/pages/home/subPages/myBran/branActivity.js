@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-18 14:21:35
+ * @LastEditTime: 2019-08-19 20:58:47
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -69,7 +69,7 @@ export default class Main extends React.Component {
                         </div>
                     </div>
                     <div className="card-img-right">
-                        <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888${data.cover_image_url}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
+                        <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888/tianti-module-admin${data.cover_image_url}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
                     </div>
                 </div>
             ))

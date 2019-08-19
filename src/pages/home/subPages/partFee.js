@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-10 19:47:15
+ * @LastEditTime: 2019-08-19 20:32:54
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -35,6 +35,7 @@ class Main extends React.Component {
         isShowRes:false
     }
   componentDidMount() {
+    document.title = '红岩青松-党费管理'
   }
   submit = () => {
       const {form:{getFieldsValue}} = this.props;

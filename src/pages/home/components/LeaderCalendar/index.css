@@ -42,6 +42,10 @@
   overflow: hidden;
 }
 
+.leader-calender .leader-card .card-img-right img {
+  width: 100%;
+}
+
 .leader-calender .leader-card .card-extra {
   margin-top: 18px;
 }

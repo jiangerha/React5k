@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-16 22:44:33
+ * @LastEditTime: 2019-08-19 20:07:14
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -20,6 +20,7 @@ class Main extends React.Component {
         content:''
     }
   componentDidMount() {
+    document.title = `红岩青松-修改密码`
   }
   async changePwd(data){
     const {new_pwd, old_pwd, new_pwd_again} = data;

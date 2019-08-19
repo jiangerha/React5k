@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-18 11:41:37
+ * @LastEditTime: 2019-08-19 20:52:22
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -37,25 +37,32 @@ const Item = ({icon, text, path}) => (
     </div>
 )
 
-const Main = () => (
-    <div className="life-service">
-        <div className="bg-box">
-            <img src={BgImg} alt=""/>
-        </div>
-        <div className="icon-list">
-            <div>
-                {
-                    iconData.map((i,idx) => <Item key={idx} {...i}/>)
-                }
+class Main extends React.PureComponent{
+    componentDidMount(){
+        document.title = `红岩青松-生活服务`
+    }
+    render(){
+        return(
+            <div className="life-service">
+                <div className="bg-box">
+                    <img src={BgImg} alt=""/>
+                </div>
+                <div className="icon-list">
+                    <div>
+                        {
+                            iconData.map((i,idx) => <Item key={idx} {...i}/>)
+                        }
+                    </div>
+                </div>
+                <div className="img-list">
+                    {
+                        imgData.map((i,idx) => <Item key={idx} {...i}/>)
+                    }
+                </div>
             </div>
-        </div>
-        <div className="img-list">
-            {
-                imgData.map((i,idx) => <Item key={idx} {...i}/>)
-            }
-        </div>
-    </div>
-)
+        )
+    }
+}
 
 export default connect(
     null,

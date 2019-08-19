@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-17 13:48:34
+ * @LastEditTime: 2019-08-19 20:33:25
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -82,6 +82,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        document.title = '红岩青松-我的支部'
     }
     render() {
         return (

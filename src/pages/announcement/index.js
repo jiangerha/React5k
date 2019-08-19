@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 14:41:23
- * @LastEditTime: 2019-08-17 14:34:09
+ * @LastEditTime: 2019-08-19 20:06:11
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -21,6 +21,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        document.title = '红岩青松-通知公告'
     }
     render() {
         return (

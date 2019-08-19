@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-18 19:40:45
+ * @LastEditTime: 2019-08-19 20:20:53
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -18,12 +18,11 @@ import NavFooter from '@/new_components/NavFooter'
 import NavBar from '@/new_components/NavBar.jsx'
 import Routes from './routerConfig'
 import HomeImg from '../common/imgs/home-img.png'
-import Home from '@pages/home/index.js'
 
 
 class App extends Component {
     state = {
-        isShowImg:true,
+        isShowImg:false,
     }
     componentDidMount = () => {
         setTimeout(() => this.setState({isShowImg:false}), 3000);
@@ -53,9 +52,9 @@ class App extends Component {
                 <div className="main" style={{
                     marginBottom:pathTF?'50px':'0px',
                 }}>
-                    {
+                    {/* {
                         location.pathname !== '/login' && <NavBar {...this.props} pathname={location.pathname}/>
-                    }
+                    } */}
                     {   !this.state.isShowImg && 
                         <Switch>
                             {/* <Route path='/' component={App}> */}

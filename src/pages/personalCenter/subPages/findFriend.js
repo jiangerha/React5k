@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-17 10:38:43
+ * @LastEditTime: 2019-08-19 20:12:22
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -19,6 +19,7 @@ class Main extends React.Component {
         visible:false
     }
   componentDidMount() {
+    document.title = `红岩青松-寻找好友`
   }
   async findFriend(data){
     const {friend_name, title, content} = data;

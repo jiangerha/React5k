@@ -32,11 +32,11 @@ const CardItem = (props) => {
                 <p className="card-title" style={style}>{title}</p>
                 <div className="card-extra">
                     <span className="card-tag">{publisher || '红岩青松'}</span>
-                    <span className="card-time">{createDate}</span>
+                    <span className="card-time">{createDate.substring(0,10)}</span>
                 </div>
             </div>
             <div className="card-img-right">
-            <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888${coverImageUrl}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
+            <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888/tianti-module-admin${coverImageUrl}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
             </div>
         </div>
     )

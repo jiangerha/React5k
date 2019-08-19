@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-06 20:55:03
- * @LastEditTime: 2019-08-18 10:19:52
+ * @LastEditTime: 2019-08-19 19:56:26
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -23,6 +23,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        window.document.title = '红岩青松'
         this.isLogin()
     }
     isLogin = () => {

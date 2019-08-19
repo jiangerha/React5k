@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-18 14:22:45
+ * @LastEditTime: 2019-08-19 20:58:50
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -41,9 +41,9 @@ export default class Main extends React.Component {
       <div className="img-card-list">
         {
             this.state.data.map((data,idx) => (
-                <div key={idx} className="card-item" onClick={() => history.push(`/details?id=undefined&data=${JSON.stringify({...data,isTeam})}`)}>
+                <div key={idx} className="card-item" onClick={() => history.push(`/details?id=undefined&data=${encodeURI(JSON.stringify({...data,isTeam}))}`)}>
                     <div className="card-mask"></div>
-                    <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888${data.cover_img}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
+                    <img ref={ref => this.img = ref} src={`http://113.125.49.13:8888/tianti-module-admin${data.cover_img}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
                     <div className="text-box">
                         <p className="title">{data.hd_name || data.hd_Name}</p>
                         <p className="time">{data.start_date.substring(0,19)}</p>

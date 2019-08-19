@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 22:11:46
- * @LastEditTime: 2019-08-18 12:55:46
+ * @LastEditTime: 2019-08-19 20:07:55
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -47,6 +47,7 @@ class Main extends React.PureComponent {
     }
 
     componentDidMount = () => {
+        document.title = `红岩青松-消息通知`
         this.queryTable()
     }
 

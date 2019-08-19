@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-17 10:37:14
+ * @LastEditTime: 2019-08-19 20:09:37
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -18,6 +18,7 @@ class Main extends React.Component {
         visible:false
     }
   componentDidMount() {
+    document.title = this.props.pageTitle;
   }
   postMsg = async(data) => {
     const {type} = this.props;

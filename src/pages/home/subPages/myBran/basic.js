@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-17 11:34:37
+ * @LastEditTime: 2019-08-19 20:34:15
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -92,7 +92,6 @@ class Main extends React.Component {
       const propsDataArr = location.search.split("=");
       const propsData = propsDataArr.length > 1 && JSON.parse(decodeURI(propsDataArr[1]));
       if(propsData){
-        console.log(propsData,'propsData')
         this.setState({data:propsData})
         return sendId && sendId(propsData.id)
       }
@@ -122,11 +121,12 @@ class Main extends React.Component {
       {
         fieldList.map(({name, label}) => {
           return name === "memberList" ? (
-            <List className="party-list" onClick={() => this.props.history.push(url)}>
+            <List key={name} className="party-list" onClick={() => this.props.history.push(url)}>
               <Item arrow="horizontal">{label}</Item>
           </List>
           ) : (
             <InputItem
+              key={name}
               disabled
               {...getFieldProps(name,{
                   initialValue:data[name]

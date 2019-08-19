@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-18 19:46:40
+ * @LastEditTime: 2019-08-19 21:07:55
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -34,6 +34,9 @@ class Index extends React.PureComponent{
     }
 
     componentDidMount = () => {
+        const {pathname} = window.location;
+        const text = pathname === '/myTeamList' ? '我的团队' : pathname === '/partyMemList' ? '党员名单' : pathname === '/demoCommunity' ? '示范社区' : pathname === '/teamMemList' ? '队员名单' : '兴趣小组'
+        document.title = `红岩青松-${text}`
         this.queryTable()
     }
 
@@ -80,6 +83,7 @@ class Index extends React.PureComponent{
     render(){
         const {finishText, list} = this.state;
         const {pathname} = window.location;
+        const linkArr = ['/demoCommunity','/myTeamList','/interestGroup']
         return(
             <Refresh 
             direction='up' 
@@ -88,7 +92,7 @@ class Index extends React.PureComponent{
                 <div className="basic-form member-list">
                     <List className="party-list">
                         {
-                            list.map((data,idx) => <Item key={idx} onClick={ () => pathname.indexOf('myTeamList') > -1 && (this.props.history.push(`/myTeam?data=${JSON.stringify(data)}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
+                            list.map((data,idx) => <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${JSON.stringify(data)}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
                         }
                     </List>
                 </div>

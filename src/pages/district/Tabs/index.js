@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 14:49:17
- * @LastEditTime: 2019-08-18 20:44:30
+ * @LastEditTime: 2019-08-19 20:13:05
  * @LastEditors: Please set LastEditors
  */
 import React from 'react';
@@ -28,10 +28,10 @@ const TabExample = () => (
       onChange={(tab, index) => { console.log('onChange', index, tab); }}
       onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
     >
-      {/* <Scroll>
+      <Scroll>
         <Grid data={gridData} columnNum={3} hasLine={false} activeStyle={false} />
-      </Scroll> */}
-      <ListView/>
+      </Scroll>
+      {/* <ListView/> */}
     </Tabs>
   </div>
 );

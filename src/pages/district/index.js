@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 14:41:23
- * @LastEditTime: 2019-08-16 23:03:22
+ * @LastEditTime: 2019-08-19 20:06:05
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -21,6 +21,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        document.title = '红岩青松-区县/部门'
     }
     render() {
         return (

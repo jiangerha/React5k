@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 15:58:19
- * @LastEditTime: 2019-08-18 14:21:43
+ * @LastEditTime: 2019-08-19 20:40:45
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -32,17 +32,18 @@ class Main extends React.PureComponent{
     }
 
     componentDidMount = () => {
+        document.title = '红岩青松-正文详情'
         this.queryDetail()
     }
 
     signInDetails = (search) => {
         const arr = search.split("&data=");
         const data = JSON.parse(decodeURI(arr[1]));
-        const {content, tile, publisher, create_date, start_date, voice_url,hd_id, isTeam} = data || {};
+        const {content, tile, publisher, create_date, start_date, voice_url,hd_id, isTeam, hd_name} = data || {};
         data && this.setState({
             hd_id,
             content,
-            title:tile,
+            title:tile || hd_name,
             publisher,
             voiceUrl:voice_url,
             createDate:(create_date || start_date).substring(0,19),
@@ -126,7 +127,6 @@ class Main extends React.PureComponent{
                     <div className="details-page">
                         <p className="title">{title}</p>
                         <div className="extra-info">
-                            <span>作者：{publisher || '红岩青松'}</span>
                             <span>发布时间：{createDate}</span>
                             {voiceUrl &&
                                 <div>
@@ -136,6 +136,7 @@ class Main extends React.PureComponent{
                             }
                         </div>
                         <div ref={e => this.content = e} className="content"></div>
+                        <span className="author">作者：{publisher || '红岩青松'}</span>
                         {
                             hd_id && <Button onClick={this.signIn}>报名</Button>
                         }

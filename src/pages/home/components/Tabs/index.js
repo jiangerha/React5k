@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-06 21:50:48
- * @LastEditTime: 2019-08-17 15:53:21
+ * @LastEditTime: 2019-08-19 20:04:33
  * @LastEditors: Please set LastEditors
  */
 import React from 'react';
@@ -13,6 +13,7 @@ import LeadingParty from '../LeadingParty'
 import PromotingDev from '../PromotingDev'
 import HappyLife from '../HappyLife'
 import './index.scss'
+const titleList = ['领袖日历','党建引领','助推发展','幸福生活'];
 
 export default class TabExample extends React.PureComponent {
 
@@ -39,7 +40,8 @@ export default class TabExample extends React.PureComponent {
           {...config.style}
           initialPage={this.state.initialPage}
           prerenderingSiblingsNumber={0}
-          onChange={(tab, index) => props.history.push(`/index/${index}`)}
+          onChange={(tab, index) => { props.history.push(`/index/${index}`)}}
+          // onChange={(tab, index) => props.history.push(`/index/${index}`)}
         >
           <LeaderCalendar {...props}/>
           <LeadingParty {...props}/>

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-15 21:41:17
+ * @LastEditTime: 2019-08-19 20:30:46
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -76,6 +76,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        document.title = '红岩青松-党建知识'
     }
     render() {
         return (

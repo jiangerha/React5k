@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 20:16:55
- * @LastEditTime: 2019-08-17 14:57:59
+ * @LastEditTime: 2019-08-19 20:06:40
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -44,6 +44,7 @@ class Main extends React.PureComponent {
         }
     }
     componentDidMount() {
+        document.title = `红岩青松-个人中心`
     }
     render() {
         const storage = window.localStorage;
