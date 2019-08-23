@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 15:58:19
- * @LastEditTime: 2019-08-19 21:21:43
+ * @LastEditTime: 2019-08-19 23:28:10
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -45,11 +45,11 @@ class Main extends React.PureComponent{
     signInDetails = (search) => {
         const arr = search.split("&data=");
         const data = JSON.parse(decodeURI(arr[1]));
-        const {content, tile, publisher, create_date, start_date, voice_url,hd_id, isTeam, hd_name} = data || {};
+        const {content, tile, publisher, create_date, start_date, voice_url,hd_id, isTeam, hd_name, hd_Name} = data || {};
         data && this.setState({
             hd_id,
             content,
-            title:tile || hd_name,
+            title:tile || hd_name || hd_Name,
             publisher,
             voiceUrl:voice_url,
             createDate:(create_date || start_date).substring(0,19),

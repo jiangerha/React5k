@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-06 21:50:48
- * @LastEditTime: 2019-08-19 20:04:33
+ * @LastEditTime: 2019-08-23 21:29:29
  * @LastEditors: Please set LastEditors
  */
 import React from 'react';
@@ -38,10 +38,10 @@ export default class TabExample extends React.PureComponent {
         <Tabs
           tabs={config.tabs}
           {...config.style}
+          swipeable={false}
           initialPage={this.state.initialPage}
           prerenderingSiblingsNumber={0}
           onChange={(tab, index) => { props.history.push(`/index/${index}`)}}
-          // onChange={(tab, index) => props.history.push(`/index/${index}`)}
         >
           <LeaderCalendar {...props}/>
           <LeadingParty {...props}/>

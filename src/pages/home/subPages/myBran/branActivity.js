@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 21:22:53
+ * @LastEditTime: 2019-08-23 20:38:44
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -72,7 +72,7 @@ export default class Main extends React.Component {
                         <p className="card-title" style={style}>{data.tile}</p>
                         <div className="card-extra">
                             <span className="card-tag">{data.publisher || '红岩青松'}</span>
-                            <span className="card-time">{data.create_date.substring(0,19)}</span>
+                            <span className="card-time">{data.create_date.substring(0,10)}</span>
                         </div>
                     </div>
                     <div className="card-img-right">

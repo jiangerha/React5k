@@ -2382,7 +2382,7 @@ a {
     width: 68px;
 }
 .am-list-item .am-input-label.am-input-label-5 {
-    width: 85px;
+    width: 70px;
 }
 .am-list-item .am-input-label.am-input-label-6 {
     width: 102px;
@@ -2673,14 +2673,15 @@ a {
     white-space: nowrap;
 }
 .am-list-item .am-list-line .am-list-brief {
-    color: #888;
-    font-size: 15px;
-    line-height: 1.5;
-    margin-top: 6px;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 18px;
+    /* margin-top: 6px; */
     width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    word-wrap: break-word;
 }
 .am-list-item .am-list-line .am-list-arrow {
     display: block;

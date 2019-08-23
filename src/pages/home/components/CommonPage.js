@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-07 22:42:41
- * @LastEditTime: 2019-08-17 15:25:47
+ * @LastEditTime: 2019-08-23 21:00:33
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -24,7 +24,8 @@ const pathList1 = [
         path:'characteBran',
         columnId:LeadingParty.tszb,
     },
-    { path:'myBran', }
+    { path:'myBran', },
+    { path:'pioModel', }
 ];
 const pathList2 = [
     {

@@ -1,42 +1,37 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-23 22:04:51
+ * @LastEditTime: 2019-08-23 22:30:21
+ * @LastEditors: Please set LastEditors
+ */
 import React from 'react'
 import { Toast } from 'antd-mobile';
 import Refresh from './Refresh'
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
+import ManIcon from '@/common/imgs/tel-man.png';
+import TelIcon from '@/common/imgs/tel-pho.png';
 
-// const listData = Array.from(new Array(7)).map((_val, i) => ({
-//     title:'向着网络强国阔步前行— —党的 十八大以来网信',
-//     icon: require(`../common/imgs/card.png`),
-//     time: '2018-04-20',
-//     tag: '红岩青松',
-// }));
+const listData = Array.from(new Array(7)).map((_val, i) => ({
+    tag: '红岩青松',
+}));
 
 const CardItem = (props) => {
-    const {data:{title, createDate, publisher, id, coverImageUrl}} = props
-    const defaultImg = require(`../common/imgs/card.png`);
-    const style = {
-        lineHeight: '25px',
-        color: '#333',
-        fontSize: '14px',
-        margin: 0,
-        maxHeight: '50px',
-        display: '-webkit-box',
-        WebkitBoxOrient: 'vertical',
-        WebkitLineClamp: 2,
-        overflow: 'hidden',
-        textOverflow:'ellipsis'
-      }
+    const {data:{title, createDate, publisher, id}} = props
     return (
-        <div className="leader-card img-card" onClick={() => props.history.push(`/details?id=${id}`)}>
+        <div className="tel-card">
             <div className="card-left">
-                <p className="card-title" style={style}>{title}</p>
+                <img src={ManIcon}/>
                 <div className="card-extra">
-                    <span className="card-tag">{publisher || '红岩青松'}</span>
-                    <span className="card-time">{createDate.substring(0,10)}</span>
+                    <p>{`姓名:${'张婉婷'}`}</p>
+                    <p>{`电话:${'225555445555'}`}</p>
                 </div>
             </div>
-            <div className="card-img-right">
-            <img ref={ref => this.img = ref} src={coverImageUrl && `http://113.125.49.13:8888/tianti-module-admin${coverImageUrl}` || defaultImg} onError={(e) => e.target.src = defaultImg} alt=""/>
+            <div className="card-right">
+                <a href="tel:18883248515">
+                    <img src={TelIcon}/>
+                </a>
             </div>
         </div>
     )
@@ -105,9 +100,10 @@ export default class Main extends React.PureComponent{
                 direction='up'
                 refreshData={this.refreshData}
                 finishText={finishText}>
-                <div className="card-list">
+                <div className="tel-card-list">
                     {
-                        list.length > 0 && list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>)
+                        // list.length > 0 && list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>)
+                        listData.length > 0 && listData.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>)
                     }
                 </div>
             </Refresh>

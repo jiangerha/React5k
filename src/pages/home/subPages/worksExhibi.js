@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-17 14:16:20
+ * @LastEditTime: 2019-08-23 20:51:56
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -21,7 +21,7 @@ const {wx, sf, hh, sy} = HappyLife;
 const activeColor = "#fe543a"
 const config = {
     tabs:[
-        { title: "文学" },
+        { title: "推荐" },
         { title: "书法" },
         { title: "绘画" },
         { title: "摄影" },

@@ -2,15 +2,17 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 21:22:23
+ * @LastEditTime: 2019-08-23 22:12:38
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
 import {  InputItem,  List, Toast } from 'antd-mobile';
 import { createForm } from 'rc-form';
 import Http from '@/httpTool/http'
+import TelList from '@/new_components/TelList'
 import '../index.scss'
 const Item = List.Item;
+const Brief = Item.Brief;
 
 const branchList = [
   {
@@ -41,7 +43,7 @@ const teamList = [
   },
   {
     name:'teamPurpose',
-    label:'团队宗旨'
+    label:'简介'
   },
   {
     name:'adminName',
@@ -122,14 +124,20 @@ class Main extends React.Component {
     const fieldList = isTeam ? teamList : isGroup ? groupList : branchList;
     const url = `/${isTeam ? 'teamMemList' : isGroup ? "groupMemList" : 'partyMemList'}${id ? `?id=${id}` : ''}`
     return (
-      <div className="personal-sugge personal-find-frind basic-form">
+      <div className="personal-sugge personal-find-frind basic-form branch-form">
       {
         fieldList.map(({name, label}) => {
           return name === "memberList" ? (
             <List key={name} className="party-list" onClick={() => this.props.history.push(url)}>
               <Item arrow="horizontal">{label}</Item>
           </List>
-          ) : (
+          ) : name === "teamPurpose" ? <List className="intro-box">
+            <Item 
+              wrap
+              multipleLine
+              platform="android"
+            ><span>{label}</span><Brief>{data[name]}</Brief></Item>
+          </List> : (
             <InputItem
               key={name}
               disabled
@@ -140,6 +148,7 @@ class Main extends React.Component {
           )
         })
       }
+        <TelList/>
       </div>
     );
   }
