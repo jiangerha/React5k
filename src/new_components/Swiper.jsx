@@ -54,11 +54,11 @@ export default class Swiper extends React.PureComponent {
             infinite
             afterChange={index => this.setState({swiperIndex:index})}
         >
-            {data.length > 0 && data.map(({coverImageUrl},idx) => (
+            {data.length > 0 && data.map(({coverImageUrl, href},idx) => (
                 <a
                     className="item"
                     key={idx}
-                    href="javascript:;"
+                    href={!href || href === "#" ? "javascript:;" : href}
                     style={{ display: 'inline-block', width: '100%'}}
                 >
                     <img

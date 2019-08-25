@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 21:33:05
- * @LastEditTime: 2019-08-25 15:49:26
+ * @LastEditTime: 2019-08-25 22:03:01
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -12,6 +12,7 @@ import * as routerAction from '@actions/routerAction'
 import {TabBar} from 'antd-mobile'
 import NavConfg from './config'
 import {withRouter} from 'react-router-dom'
+import * as showAdAction from '@actions/showAdAction'
 
 const {data, style} = NavConfg
 
@@ -39,6 +40,9 @@ class NavFooter extends React.Component {
     changeTab(){
         window.addEventListener("popstate", () => { 
             const {pathname} = window.location;
+            const {hideAd} = this.props;
+            pathname === '/' && window.history.replaceState(null,null,'/index')
+            pathname && hideAd.hideAd()
             this.setState({selectedNav:pathname})
         }, false); 
     }
@@ -97,14 +101,16 @@ class NavFooter extends React.Component {
     }
 }
 export default connect(
-    ({routerReducer})=>{
+    ({routerReducer,showAdReducer})=>{
         return{
-            path:routerReducer.path
+            path:routerReducer.path,
+            isShowAd:showAdReducer
         }
     },
     (dispatch)=>{
         return {
-            router:bindActionCreators(routerAction,dispatch)
+            router:bindActionCreators(routerAction,dispatch),
+            hideAd:bindActionCreators(showAdAction,dispatch),
         }
     }
 )(withRouter(NavFooter))

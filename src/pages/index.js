@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-25 17:08:42
+ * @LastEditTime: 2019-08-25 22:11:03
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -70,7 +70,7 @@ class App extends Component {
                                 {
                                     Routes.map(({path, component},idx) => <Route key={idx} exact path={path} component={component}></Route>)
                                 }
-                                {/* <Redirect from="/" to="/index/0" /> */}
+                                <Redirect from="/" to="/index/0" />
                                 {/* <Redirect from="/index" to="/index/0" /> */}
                             {/* </Route> */}
                         </Switch>
