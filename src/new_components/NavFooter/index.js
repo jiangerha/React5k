@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 21:33:05
- * @LastEditTime: 2019-08-25 12:22:37
+ * @LastEditTime: 2019-08-25 13:46:55
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -39,6 +39,7 @@ class NavFooter extends React.Component {
     changeTab(){
         window.addEventListener("popstate", () => { 
             const {pathname} = window.location;
+            (pathname === "/") && window.history.replaceState(null, null, '/index')
             this.setState({selectedNav:pathname})
         }, false); 
     }
@@ -81,6 +82,7 @@ class NavFooter extends React.Component {
                                 selected={path ? this.calcPath(path) === v.key : selectedNav ? selectedNav.indexOf(v.key) > -1 : selectedTab === v.key}
                                 onPress={() => {
                                     this.setState({
+                                        selectedNav:'',
                                         selectedTab: v.key,
                                     });
                                     this.props.history.push('/'+v.key)
