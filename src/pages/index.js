@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-25 13:42:20
+ * @LastEditTime: 2019-08-25 13:48:05
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -25,15 +25,12 @@ class App extends Component {
         super()
         const {pathname} = window.location;
         const arr = ['/','/login']
-        
         this.state = {
             isShowImg:arr.indexOf(pathname) > -1 ? true : false,
         }
     }
     componentDidMount = () => {
         const storage = window.localStorage;
-        const isHideAd = storage.getItem("isHideAd");
-        console.log(isHideAd,'isHideAd')
         setTimeout(() => this.setState({isShowImg:false}), 3000);
         this.isLogin()
     }
