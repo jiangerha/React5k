@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-25 15:51:35
+ * @LastEditTime: 2019-08-25 17:09:14
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -29,7 +29,7 @@ class Main extends React.Component {
       const storage = window.localStorage;
       const userName = storage.getItem("user_name");
       const userPwd = storage.getItem("user_pwd");
-      (userName && userPwd) && this.props.history.push('/index')
+      (userName && userPwd) && this.props.history.push('/')
     }
 
   async login(data){

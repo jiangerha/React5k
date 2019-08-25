@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-25 16:50:03
+ * @LastEditTime: 2019-08-25 17:08:42
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -33,7 +33,6 @@ class App extends Component {
     }
     componentDidMount = () => {
         const {hideAd} = this.props;
-        console.log(hideAd,'hideAd')
         setTimeout(() => this.setState({isShowImg:false},hideAd.hideAd), 3000);
         this.isLogin()
     }
