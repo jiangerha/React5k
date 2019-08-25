@@ -1,5 +1,6 @@
 import React from 'react'
-import { Carousel } from 'antd-mobile';
+import { Carousel, List } from 'antd-mobile';
+import defaultImg from '../common/imgs/banner1.png'
 
 const returnImgCon = (num) => {
     return {
@@ -40,7 +41,11 @@ export default class Swiper extends React.PureComponent {
   componentDidMount() {
   }
   render() {
-      const {data, swiperIndex} = this.state;
+    //   const {data, swiperIndex} = this.state;
+      const {swiperIndex} = this.state;
+      const {list} = this.props;
+      const data = list.length >= 5 ? list.slice(0,5) : list;
+      console.log(this.props.list,data)
     return (
         <div className="swiper-box">
             <Carousel
@@ -49,14 +54,17 @@ export default class Swiper extends React.PureComponent {
             infinite
             afterChange={index => this.setState({swiperIndex:index})}
         >
-            {data.map((i,idx) => (
+            {data.length > 0 && data.map(({coverImageUrl},idx) => (
                 <a
+                    className="item"
                     key={idx}
                     href="javascript:;"
                     style={{ display: 'inline-block', width: '100%'}}
                 >
                     <img
-                        src={i.img}
+                        className="swiper-img"
+                        src={coverImageUrl && `http://113.125.49.13:8888/tianti-module-admin${coverImageUrl}` || defaultImg} 
+                        onError={(e) => e.target.src = defaultImg}
                         alt=""
                         style={{ width: '100%', verticalAlign: 'top' }}
                         onLoad={() => {
@@ -70,7 +78,7 @@ export default class Swiper extends React.PureComponent {
       </Carousel>
       <div className="text-bottom">
         <span className="bg"></span>
-        <p>{data[swiperIndex].title}</p>
+        <p>{data.length > 0 && data[swiperIndex].title}</p>
       </div>
       <div className="swiper-bottom"></div>
     </div>

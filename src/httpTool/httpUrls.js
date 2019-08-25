@@ -2,12 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 22:29:47
- * @LastEditTime: 2019-08-25 10:48:25
+ * @LastEditTime: 2019-08-25 13:57:22
  * @LastEditors: Please set LastEditors
  */
 const columnIdObj = {
     home:{
-        lxrl:'8a2a08425b7a0b7b015b7a105a640003'
+        lxrl:'8a2a08425b7a0b7b015b7a105a640003',
+        banner:'8a2a08425b7a0b7b015b7a2b0f060006'
     },
     announcement:{
         tzgg:'8a2a08425b7a0b7b015b7a9d0b2e000a',
