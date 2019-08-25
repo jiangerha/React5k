@@ -2,13 +2,14 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-25 13:48:05
+ * @LastEditTime: 2019-08-25 16:50:03
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as routerAction from '@actions/routerAction'
+import * as showAdAction from '@actions/showAdAction'
 import { Switch, Redirect, Route } from 'react-router-dom'
 // import { Route, IndexRoute } from 'react-router'
 
@@ -21,17 +22,19 @@ import HomeImg from '../common/imgs/home-img.png'
 
 
 class App extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
+        const {isShowAd} = props;
         const {pathname} = window.location;
         const arr = ['/','/login']
         this.state = {
-            isShowImg:arr.indexOf(pathname) > -1 ? true : false,
+            isShowImg:arr.indexOf(pathname) > -1 && isShowAd ? true : false,
         }
     }
     componentDidMount = () => {
-        const storage = window.localStorage;
-        setTimeout(() => this.setState({isShowImg:false}), 3000);
+        const {hideAd} = this.props;
+        console.log(hideAd,'hideAd')
+        setTimeout(() => this.setState({isShowImg:false},hideAd.hideAd), 3000);
         this.isLogin()
     }
     isLogin = () => {
@@ -40,18 +43,9 @@ class App extends Component {
         const userPwd = storage.getItem("user_pwd");
         (!userName || !userPwd) && this.props.history.push('/login')
     }
-    // goBack(){
-    //     console.log(document.location.pathname,'back')
-    //     const path = document.location.pathname;
-    //     path.indexOf('/index') > -1 && window.history.replaceState(null, null, '')
-    //     // window.history.replaceState(null, null, '/');
-    // }
-    // componentWillUnmount(){
-    //     window.removeEventListener('popstate', this.goBack, false);
-    // }
     render(){
         let pathTF = false;
-        const {paths,location, pathname, router} = this.props;
+        const {paths,location, pathname, router,isShowAd} = this.props;
         paths.forEach(v=>{
             if(pathname===null&&(location.pathname===v)){
                 pathTF=true
@@ -100,16 +94,18 @@ class App extends Component {
 }
 
 export default connect(
-    ({routerReducer})=>{
+    ({routerReducer,showAdReducer})=>{
         return {
             paths:routerReducer.paths,
             pathname:routerReducer.path,
-            title:routerReducer.title
+            title:routerReducer.title,
+            isShowAd:showAdReducer
         }
     },
     (dispatch)=>{
         return {
-            router:bindActionCreators(routerAction,dispatch)
+            router:bindActionCreators(routerAction,dispatch),
+            hideAd:bindActionCreators(showAdAction,dispatch),
         }
     }
 )(App)

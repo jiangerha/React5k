@@ -222,7 +222,7 @@
 }
 
 .details-page .title {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
   color: #333;
   text-align: center;
@@ -435,4 +435,12 @@
 .district .deving-box p {
   font-size: 14px;
   color: #888;
+}
+
+.wtf {
+  height: 100%;
+}
+
+.wtf .wrapper {
+  height: 100%;
 }

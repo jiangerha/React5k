@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 21:33:05
- * @LastEditTime: 2019-08-25 13:46:55
+ * @LastEditTime: 2019-08-25 15:49:26
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -39,7 +39,6 @@ class NavFooter extends React.Component {
     changeTab(){
         window.addEventListener("popstate", () => { 
             const {pathname} = window.location;
-            (pathname === "/") && window.history.replaceState(null, null, '/index')
             this.setState({selectedNav:pathname})
         }, false); 
     }

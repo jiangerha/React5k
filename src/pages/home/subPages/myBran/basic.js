@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-25 11:53:52
+ * @LastEditTime: 2019-08-25 16:00:59
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -139,7 +139,13 @@ class Main extends React.Component {
               platform="android"
             ><span>{label}</span><Brief>{data[name]}</Brief></Item>
           </List> : (
-            <InputItem
+            name === "adminTel" ? <a style={{display:'block'}} href={`tel:${data[name]}`}><InputItem
+            key={name}
+            disabled
+            {...getFieldProps(name,{
+                initialValue:data[name]
+            })}
+          >{label}</InputItem></a> : <InputItem
               key={name}
               disabled
               {...getFieldProps(name,{

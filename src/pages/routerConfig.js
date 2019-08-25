@@ -79,7 +79,7 @@ const routes = [
         component:PartyBuild
     },
     {
-        name:'专题教育',
+        name:'主题教育',
         path:'/thematicEdu',
         component:Affairs
     },

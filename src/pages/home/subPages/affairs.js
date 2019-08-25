@@ -2,12 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 15:58:19
- * @LastEditTime: 2019-08-19 20:32:16
+ * @LastEditTime: 2019-08-25 16:31:21
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+import Scroll from '@components/Scroll'
 import * as routerAction from '@actions/routerAction'
 import LeadingCard from '@/new_components/LeadingCard.jsx'
 import routerCon from '@/pages/routerConfig'
@@ -19,7 +20,11 @@ class Main extends React.PureComponent{
     }
     render(){
         return(
-            <div className="leader-calender margin5px"><LeadingCard {...this.props}/></div>
+            <div className="leader-calender margin5px wtf">
+                <Scroll>
+                    <LeadingCard {...this.props}/>
+                </Scroll>
+            </div>
         )
     }
 }

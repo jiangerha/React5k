@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:05:38
- * @LastEditTime: 2019-08-19 21:15:31
+ * @LastEditTime: 2019-08-25 15:51:35
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -29,7 +29,7 @@ class Main extends React.Component {
       const storage = window.localStorage;
       const userName = storage.getItem("user_name");
       const userPwd = storage.getItem("user_pwd");
-      (userName && userPwd) && this.props.history.push('/')
+      (userName && userPwd) && this.props.history.push('/index')
     }
 
   async login(data){
@@ -41,7 +41,7 @@ class Main extends React.Component {
             Toast.success('登录成功', 2)
             const storage = window.localStorage;
             Object.keys(data).map(i => storage.setItem(i,data[i]))
-            this.props.history.push('/')
+            this.props.history.push('/index')
           }else{
             Toast.fail(msg, 2)
           }
