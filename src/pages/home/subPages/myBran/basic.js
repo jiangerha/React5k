@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-23 22:12:38
+ * @LastEditTime: 2019-08-25 11:53:52
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -132,7 +132,8 @@ class Main extends React.Component {
               <Item arrow="horizontal">{label}</Item>
           </List>
           ) : name === "teamPurpose" ? <List className="intro-box">
-            <Item 
+            <Item
+              key={name} 
               wrap
               multipleLine
               platform="android"
@@ -148,7 +149,7 @@ class Main extends React.Component {
           )
         })
       }
-        <TelList/>
+        {/* <TelList/> */}
       </div>
     );
   }

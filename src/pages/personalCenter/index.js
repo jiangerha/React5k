@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 20:16:55
- * @LastEditTime: 2019-08-19 20:06:40
+ * @LastEditTime: 2019-08-25 11:40:21
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -32,7 +32,7 @@ const ListData = [
     },
     {
         url:'/agreement',
-        text:"用户协议"
+        text:"关于红岩青松"
     },
 ]
 

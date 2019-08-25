@@ -60,7 +60,7 @@
 
 .personal-box .list-box {
   margin-top: 8px;
-  height: 400px;
+  height: calc(100% - 228px);
   background: #fff;
 }
 
@@ -77,6 +77,10 @@
 
 .personal-box .list-box .am-list-body {
   margin-right: 15px;
+}
+
+.personal-box .scroll-content {
+  height: 100%;
 }
 
 .personal-message {
@@ -224,6 +228,11 @@
   color: #333;
 }
 
+.agreement {
+  height: 100%;
+  background: #fff;
+}
+
 .agreement .content {
   padding: 0 14px;
 }
@@ -232,4 +241,9 @@
   font-size: 20px;
   padding: 20px 0;
   line-height: 20px;
+}
+
+.agreement .content .text {
+  text-indent: 2em;
+  color: #666;
 }

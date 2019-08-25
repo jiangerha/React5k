@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 22:29:47
- * @LastEditTime: 2019-08-18 10:52:34
+ * @LastEditTime: 2019-08-25 10:48:25
  * @LastEditors: Please set LastEditors
  */
 const columnIdObj = {
@@ -24,7 +24,8 @@ const columnIdObj = {
         dzdg:'402880596c9388af016c93e0782c0000',
         kc:'4028d1816c668d33016c669a326f0001',
         ztjy:'4028d1816c668d33016c669ab70f0002',
-        tszb:'4028d1816c668d33016c669bad560004'
+        tszb:'4028d1816c668d33016c669bad560004',
+        xfmf:'402880596cc45ad0016cc6994c8a0001',
     },
     PromotingDev:{
         ctxcj:'4028d1816c668d33016c66a0e2700008',

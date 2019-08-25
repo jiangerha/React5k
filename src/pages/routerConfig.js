@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:10:58
- * @LastEditTime: 2019-08-17 14:08:14
+ * @LastEditTime: 2019-08-25 11:51:14
  * @LastEditors: Please set LastEditors
  */
 
@@ -116,6 +116,11 @@ const routes = [
     {
         name:'特色支部',
         path:'/characteBran',
+        component:Affairs
+    },
+    {
+        name:'先锋模范',
+        path:'/pioModel',
         component:Affairs
     },
     {
@@ -234,7 +239,7 @@ const routes = [
         component:NewPhone
     },
     {
-        name:'用户协议',
+        name:'关于红岩青松',
         path:'/personal/agreement',
         component:Agreement
     },
@@ -244,7 +249,7 @@ const routes = [
         component:Announcement
     },
     {
-        name:'红岩青松-区县/部门',
+        name:'红岩青松-通讯录',
         path:'/district',
         component:District
     },

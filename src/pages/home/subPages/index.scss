@@ -58,8 +58,8 @@
     }
     .calc-result{
         font-size: 16px;
-        margin-top: 40px;
         text-align: center;
+        padding: 0 12px;
         .result{
             padding: 0 8px;
             color: #FF523A;
@@ -67,8 +67,10 @@
     }
 }
 .tip-modal{
-    width: 320px;
-    .am-modal-body{
+    padding: 24px 32px;
+    .big-title{
+        font-size: 16px;
+        color: #333;
     }
     .title{
         color: #333;
@@ -319,6 +321,7 @@
         .am-list-content{
             display: flex;
             >span{
+                font-size: 14px;
                 min-width: 70px;
                 margin-right: 5px;
                 display: inline-block;
@@ -371,6 +374,23 @@
                 width: 100%;
                 height: 100%;
             }
+        }
+    }
+}
+.district{
+    .wrapper{
+        background: #fff;
+    }
+    .deving-box{
+        text-align: center;
+        padding: 80px 0 0 0;
+        .img{
+            width: 200px;
+            height: 200px;
+        }
+        p{
+            font-size: 14px;
+            color: #888;
         }
     }
 }

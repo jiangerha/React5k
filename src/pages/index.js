@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-19 22:29:46
+ * @LastEditTime: 2019-08-25 12:18:27
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -24,7 +24,6 @@ class App extends Component {
     constructor(){
         super()
         const {pathname} = window.location;
-        console.log(window.location,'pathname')
         const arr = ['/','/login']
         this.state = {
             isShowImg:arr.indexOf(pathname) > -1 ? true : false,

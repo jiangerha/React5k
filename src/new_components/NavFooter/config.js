@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-05 21:34:45
+ * @LastEditTime: 2019-08-25 11:10:45
+ * @LastEditors: Please set LastEditors
+ */
 const returnImgCon = (num) => {
     return {
         icon:require(`../../common/imgs/nav${num}-icon.png`),
@@ -19,7 +26,7 @@ export default {
         },
         {
             ...returnImgCon(3),
-            title:'区县/部门',
+            title:'通讯录',
             key:'district'
         },
         {

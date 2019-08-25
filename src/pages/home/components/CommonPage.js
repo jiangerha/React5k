@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-07 22:42:41
- * @LastEditTime: 2019-08-23 21:00:33
+ * @LastEditTime: 2019-08-25 10:47:56
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -25,7 +25,7 @@ const pathList1 = [
         columnId:LeadingParty.tszb,
     },
     { path:'myBran', },
-    { path:'pioModel', }
+    { path:'pioModel', columnId:LeadingParty.xfmf,}
 ];
 const pathList2 = [
     {
@@ -47,10 +47,7 @@ const pathList2 = [
         path:'talentTock',
         columnId:PromotingDev.rcdj,
     },
-    {
-        path:'modelPower',
-        columnId:PromotingDev.byll,
-    },
+    {path:'modelPower'},
 ];
 const pathList3 = [
     {
