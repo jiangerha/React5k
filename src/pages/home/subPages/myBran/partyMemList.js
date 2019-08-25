@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 22:58:58
+ * @LastEditTime: 2019-08-25 18:03:30
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -13,6 +13,8 @@ import * as routerAction from '@actions/routerAction'
 import Refresh from '@/new_components/Refresh'
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
+import ManIcon from '@/common/imgs/tel-man.png';
+import TelIcon from '@/common/imgs/tel-pho.png';
 import '../index.scss'
 
 const {partyMembers, teamMembers, myTeam} = api;
@@ -22,6 +24,27 @@ const Item = List.Item;
 const ListData = Array.from(new Array(20)).map((_val, i) => ({
     name: '活动经费',
 }));
+
+const CardItem = (props) => {
+    const {data} = props
+    return (
+        <div className="tel-card">
+            <div className="card-left">
+                <img src={ManIcon}/>
+                <div className="card-extra">
+                    <p>{`姓名:${data.member_name || data.teamName}`}</p>
+                    <p className="extra">{`职务:${data.tel}`}</p>
+                    <p className="extra">{`电话:${data.tel}`}</p>
+                </div>
+            </div>
+            <div className="card-right">
+                <a href={`tel:${data.tel}`}>
+                    <img src={TelIcon}/>
+                </a>
+            </div>
+        </div>
+    )
+}
 
 class Index extends React.PureComponent{
     state = {
@@ -95,10 +118,10 @@ class Index extends React.PureComponent{
             direction='up' 
             refreshData={this.refreshData}
             finishText={finishText}>
-                <div className="basic-form member-list">
+                <div className="basic-form member-list tel-card-list">
                     <List className="party-list">
                         {
-                            list.map((data,idx) => <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${encodeURI(JSON.stringify(data))}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
+                            list.map((data,idx) => linkArr.indexOf(pathname) === -1 ? <CardItem key={idx} data={data}/> : <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${encodeURI(JSON.stringify(data))}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
                         }
                     </List>
                 </div>

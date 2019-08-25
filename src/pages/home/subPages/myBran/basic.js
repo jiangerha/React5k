@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-25 16:00:59
+ * @LastEditTime: 2019-08-25 17:41:39
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -25,15 +25,15 @@ const branchList = [
   },
   {
     name:'department',
-    label:'支部委员'
+    label:'联络人'
+  },
+  {
+    name:'adminTel',
+    label:'联络人电话'
   },
   {
     name:'memberList',
     label:'党员名单'
-  },
-  {
-    name:'adminTel',
-    label:'支部电话'
   },
 ]
 const teamList = [
@@ -47,15 +47,15 @@ const teamList = [
   },
   {
     name:'adminName',
-    label:'团队队长'
+    label:'联络人'
+  },
+  {
+    name:'adminTel',
+    label:'联络人电话'
   },
   {
     name:'memberList',
     label:'队员名单'
-  },
-  {
-    name:'adminTel',
-    label:'团队电话'
   },
 ]
 const groupList = [

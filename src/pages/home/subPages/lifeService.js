@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-19 20:52:22
+ * @LastEditTime: 2019-08-25 18:47:54
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -13,8 +13,8 @@ import * as routerAction from '@actions/routerAction'
 import BgImg from '../../../common/imgs/lifeService/bg-img.png'
 import './index.scss'
 
-const iconUrls = ['http://www.cq12320.cn/index.html','javascript:;','http://cq.12348.gov.cn/wechat/app_chongqing/homeUser.html','javascrpt:;']
-const imgUrls = ['javascript:;','http://m.46644.com/express/','javascrpt:;']
+const iconUrls = ['https://www.jkwin.com.cn/ystm/org.do?index=1&regWayCode=WX&method=toOrgPage','https://m.ctrip.com/','http://cq.12348.gov.cn/wechat/app_chongqing/homeUser.html','javascrpt:;']
+const imgUrls = ['http://m.weather.com.cn','http://m.46644.com/express/','https://touch.go.qunar.com/']
 
 const iconText = ['预约挂号','票务服务','法律服务','养老机构'];
 const iconData = Array.from(new Array(4)).map((_val, i) => ({

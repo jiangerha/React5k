@@ -401,7 +401,7 @@
   margin-bottom: 10px;
 }
 
-.tel-card-list .tel-card .card-left .card-extra p:last-child {
+.tel-card-list .tel-card .card-left .card-extra .extra {
   font-size: 12px;
   color: #999;
 }
