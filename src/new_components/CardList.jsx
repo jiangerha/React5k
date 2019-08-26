@@ -3,6 +3,7 @@ import { Toast } from 'antd-mobile';
 import Refresh from './Refresh'
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
+import NoData from '@/new_components/Nodata'
 
 // const listData = Array.from(new Array(7)).map((_val, i) => ({
 //     title:'向着网络强国阔步前行— —党的 十八大以来网信',
@@ -50,6 +51,7 @@ export default class Main extends React.PureComponent{
             pageSize:10
         },
         finishText:'',
+        loading:false
     }
 
     componentDidMount = () => {
@@ -68,6 +70,7 @@ export default class Main extends React.PureComponent{
         const {columnId,location:{search}} = this.props;
         const columnId1 = columnId ? columnId : search.split("=")[1];
         Toast.loading('加载中...', 0, null, true)
+        this.setState({loading:true})
         try{
             const {data:{list, currentPage, pageSize, totalPage, totalCount},success} = await Http('get',api.list,{columnId:columnId1,currentPage:pagination.currentPage,pageSize:pagination.pageSize});
             success && this.setState({
@@ -86,6 +89,7 @@ export default class Main extends React.PureComponent{
             console.log(e)
         }finally{
             Toast.hide()
+            this.setState({loading:false})
         }
     }
 
@@ -99,7 +103,7 @@ export default class Main extends React.PureComponent{
             }}, this.queryTable)
     }
     render(){
-        const {list, finishText} = this.state
+        const {list, finishText, loading} = this.state
         return(
             <Refresh 
                 direction='up'
@@ -107,7 +111,7 @@ export default class Main extends React.PureComponent{
                 finishText={finishText}>
                 <div className="card-list">
                     {
-                        list.length > 0 && list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>)
+                        list && list.length > 0 ? list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>) : !loading && <NoData/>
                     }
                 </div>
             </Refresh>

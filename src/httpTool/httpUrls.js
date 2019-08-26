@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-12 22:29:47
- * @LastEditTime: 2019-08-25 13:57:22
+ * @LastEditTime: 2019-08-26 23:32:38
  * @LastEditors: Please set LastEditors
  */
 const columnIdObj = {

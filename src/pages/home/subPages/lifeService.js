@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-25 18:47:54
+ * @LastEditTime: 2019-08-26 22:56:55
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -45,7 +45,7 @@ class Main extends React.PureComponent{
     render(){
         return(
             <div className="life-service district">
-                {/* <div className="bg-box">
+                <div className="bg-box">
                     <img src={BgImg} alt=""/>
                 </div>
                 <div className="icon-list">
@@ -59,11 +59,11 @@ class Main extends React.PureComponent{
                     {
                         imgData.map((i,idx) => <Item key={idx} {...i}/>)
                     }
-                </div> */}
-                <div className="deving-box">
+                </div>
+                {/* <div className="deving-box">
                     <img src={IsDevingIcon} alt=""/>
                     <p>正在开发中，敬请期待</p>
-                </div>
+                </div> */}
             </div>
         )
     }

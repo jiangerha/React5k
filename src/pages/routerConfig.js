@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:10:58
- * @LastEditTime: 2019-08-25 11:51:14
+ * @LastEditTime: 2019-08-26 23:43:23
  * @LastEditors: Please set LastEditors
  */
 
@@ -39,11 +39,11 @@ const routes = [
         path:'/login',
         component:Login
     },
-    {
-        name:'首页',
-        path:'/',
-        component:Home
-    },
+    // {
+    //     name:'首页',
+    //     path:'/',
+    //     component:Home
+    // },
     {
         name:'红岩青松-领袖日历',
         path:'/index',

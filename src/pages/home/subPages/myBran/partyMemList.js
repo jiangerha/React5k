@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-25 18:03:30
+ * @LastEditTime: 2019-08-27 00:16:37
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -15,6 +15,8 @@ import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
 import ManIcon from '@/common/imgs/tel-man.png';
 import TelIcon from '@/common/imgs/tel-pho.png';
+import Nodata from '@/new_components/Nodata';
+import Scroll from '@components/Scroll'
 import '../index.scss'
 
 const {partyMembers, teamMembers, myTeam} = api;
@@ -54,6 +56,7 @@ class Index extends React.PureComponent{
             pageSize:10
         },
         finishText:'',
+        loading:false
     }
 
     componentDidMount = () => {
@@ -80,6 +83,7 @@ class Index extends React.PureComponent{
         const paramId = type === "partyMemList" ? 'partybranch_id' : type === "teamMemList" ? 'team_id' : 'tel';
         const team_type = type === "myTeamList" ? 3 : type === "demoCommunity" ? 2 : type === "interestGroup" ? 1 :''
         Toast.loading('加载中...', 0, null, true)
+        this.setState({loading:true})
         const {data,success,msg} = await Http('get',url,{[paramId]:id || tel,team_type,currentPage:pagination.currentPage,pageSize:pagination.pageSize});
         try{
             Toast.hide()
@@ -96,6 +100,8 @@ class Index extends React.PureComponent{
         }catch(e){
             console.log(e)
             Toast.fail(msg,2)
+        }finally{
+            this.setState({loading:false})
         }
     }
 
@@ -110,22 +116,26 @@ class Index extends React.PureComponent{
     }
 
     render(){
-        const {finishText, list} = this.state;
+        const {finishText, list,loading} = this.state;
         const {pathname} = window.location;
         const linkArr = ['/demoCommunity','/myTeamList','/interestGroup']
         return(
-            <Refresh 
-            direction='up' 
-            refreshData={this.refreshData}
-            finishText={finishText}>
+            // <Refresh 
+            // direction='up' 
+            // refreshData={this.refreshData}
+            // finishText={finishText}>
+            <Scroll>
                 <div className="basic-form member-list tel-card-list">
-                    <List className="party-list">
-                        {
-                            list.map((data,idx) => linkArr.indexOf(pathname) === -1 ? <CardItem key={idx} data={data}/> : <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${encodeURI(JSON.stringify(data))}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
-                        }
-                    </List>
+                    {
+                        (list && list.length) ? <List className="party-list">
+                            {
+                                list.map((data,idx) => linkArr.indexOf(pathname) === -1 ? <CardItem key={idx} data={data}/> : <Item key={idx} onClick={ () => linkArr.indexOf(pathname) > -1 && (this.props.history.push(`/myTeam?data=${encodeURI(JSON.stringify({...data,isTeam:pathname === '/myTeamList'}))}`))} extra={data.tel}>{data.member_name || data.teamName}</Item>)
+                            }
+                        </List> : !loading && <Nodata/>
+                    }
                 </div>
-            </Refresh>
+            </Scroll>
+            // </Refresh>
         )
     }
 }

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 22:11:46
- * @LastEditTime: 2019-08-19 21:23:38
+ * @LastEditTime: 2019-08-27 00:38:13
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -14,11 +14,12 @@ import Refresh from '@/new_components/Refresh'
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
 import Scroll from '@/components/Scroll'
+import Nodata from '@/new_components/Nodata'
 import { SwipeAction, List } from 'antd-mobile';
 
 const Item = List.Item;
 
-const ListData = Array.from(new Array(4)).map((_val, i) => ({
+const ListData = Array.from(new Array(30)).map((_val, i) => ({
     title: '标题最多可以这么长这么长这么内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要长哦',
     text: '内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要内容摘要',
     time:'2019-08-01  14:56:32',
@@ -56,6 +57,7 @@ class Main extends React.PureComponent {
         const storage = window.localStorage;
         const user_name = storage.getItem("user_name");
         Toast.loading('加载中...', 0, null, true)
+        this.setState({loading:true})
         try{
             // const {data:{list, currentPage, pageSize, totalPage, totalCount},success} = await Http('get',api.msgList,{user_name,currentPage:pagination.currentPage,pageSize:pagination.pageSize});
             const {data,success} = await Http('get',api.msgList,{user_name});
@@ -66,6 +68,7 @@ class Main extends React.PureComponent {
             console.log(e)
         }finally{
             Toast.hide()
+            this.setState({loading:false})
         }
     }
 
@@ -104,8 +107,9 @@ class Main extends React.PureComponent {
     }
 
     render() {
-        const {isBaGre, idx, finishText, list} = this.state;
+        const {isBaGre, idx, finishText, list, loading} = this.state;
         return (
+            <Scroll>
             <div className="personal-message">
                 <Refresh
                     direction='up' 
@@ -114,9 +118,9 @@ class Main extends React.PureComponent {
                             <div className="list-box">
                                 <List>
                                     {
-                                        list.map((i,index) => (
+                                        list && list.length > 0  ? list.map((i,index) => (
                                             <div className="message-item" key={index}>
-                                                <p className="time">{i.create_date.substring(0,19)}</p>
+                                                {/* <p className="time">{i.create_date.substring(0,19)}</p> */}
                                                 <SwipeAction
                                                     style={{ backgroundColor: 'gray' }}
                                                     autoClose
@@ -140,12 +144,13 @@ class Main extends React.PureComponent {
                                                 </Item>
                                             </SwipeAction>
                                             </div>
-                                        ))
+                                        )) : !loading && <Nodata/>
                                     }
                                 </List>
                             </div>
                 </Refresh>
             </div>
+            </Scroll>
         )
     }
 }

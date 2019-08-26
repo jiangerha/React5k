@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-07 22:42:41
- * @LastEditTime: 2019-08-25 10:47:56
+ * @LastEditTime: 2019-08-26 23:33:40
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -47,7 +47,7 @@ const pathList2 = [
         path:'talentTock',
         columnId:PromotingDev.rcdj,
     },
-    {path:'modelPower'},
+    {path:'modelPower',columnId:PromotingDev.byll},
 ];
 const pathList3 = [
     {

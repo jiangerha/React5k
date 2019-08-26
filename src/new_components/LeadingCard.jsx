@@ -3,6 +3,7 @@ import { Toast } from 'antd-mobile';
 import Refresh from './Refresh'
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
+import NoData from '@/new_components/Nodata'
 
 const CardItem = (props) => {
     const {title, createDate, publisher, id} = props.data;
@@ -40,6 +41,7 @@ export default class Main extends React.Component{
             pageSize:10
         },
         finishText:'',
+        loading:false
     }
 
     componentDidMount = () => {
@@ -51,6 +53,7 @@ export default class Main extends React.Component{
         const {columnId,location:{search}} = this.props;
         const columnId1 = columnId ? columnId : search.split("=")[1];
         Toast.loading('加载中...', 0, null, true)
+        this.setState({loading:true})
         try{
             const {data:{list, currentPage, pageSize, totalPage, totalCount},success} = await Http('get',api.list,{columnId:columnId1,currentPage:pagination.currentPage,pageSize:pagination.pageSize});
             console.log(list,'lst')
@@ -70,6 +73,7 @@ export default class Main extends React.Component{
             console.log(e)
         }finally{
             Toast.hide()
+            this.setState({loading:false})
         }
     }
 
@@ -90,7 +94,7 @@ export default class Main extends React.Component{
     }
 
     render(){
-        const {finishText, list} = this.state;
+        const {finishText, list, loading} = this.state;
         return(
             <Refresh 
             direction='up' 
@@ -98,7 +102,7 @@ export default class Main extends React.Component{
             finishText={finishText}>
                 <div className="card-list" style={{marginBottom:10}}>
                     {
-                        list.length > 0 && list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>)
+                        list && list.length > 0 ? list.map((i,idx) => <CardItem key={idx} data={i} {...this.props}/>) : !loading && <NoData/>
                     }
                 </div>
             </Refresh>

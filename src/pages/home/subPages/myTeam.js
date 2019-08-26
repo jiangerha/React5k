@@ -3,7 +3,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 16:36:49
- * @LastEditTime: 2019-08-18 10:41:25
+ * @LastEditTime: 2019-08-27 00:23:25
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -21,10 +21,15 @@ const {myBranch, teamNews, teamActivity } = api;
 
 const activeColor = "#fe543a"
 const config = {
-    tabs:[
+    teamTabs:[
         { title: "基本情况" },
         { title: "团队活动" },
         { title: "团队动态" },
+    ],
+    tabs:[
+        { title: "基本情况" },
+        { title: "活动" },
+        { title: "动态" },
     ],
     style:{
         tabBarInactiveTextColor:'#333',
@@ -43,23 +48,6 @@ const config = {
     }
 }
 
-// const TabExample = (props) => (
-//   <div>
-//     <Tabs
-//       tabs={config.tabs}
-//       {...config.style}
-//       initialPage={0}
-//       prerenderingSiblingsNumber={0}
-//       onChange={(tab, index) => { console.log('onChange', index, tab); }}
-//       onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
-//     >
-//       <Basic {...props} url={api.myTeam} isTeam={true}/>
-//       <ActivityReg {...props}  isTeam={true}/>
-//       <BranActivity {...props}  isTeam={true}/>
-//     </Tabs>
-//   </div>
-// );
-
 class TabExample extends React.PureComponent{
     state = {
         index:0,
@@ -74,9 +62,11 @@ class TabExample extends React.PureComponent{
             ...this.props,
             url:index === 0 ? myBranch : index === 1 ? teamActivity : teamNews
         }
+        const urlData = cardProps.location.search.split("?data=")[1];
+        const isTeam = JSON.parse(decodeURI(urlData)).isTeam
         return(
             <Tabs
-                tabs={config.tabs}
+                tabs={isTeam ? config.teamTabs : config.tabs}
                 {...config.style}
                 initialPage={0}
                 prerenderingSiblingsNumber={0}

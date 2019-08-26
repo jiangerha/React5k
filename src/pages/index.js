@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-25 22:11:03
+ * @LastEditTime: 2019-08-26 23:42:58
  * @LastEditors: Please set LastEditors
  */
 import React, { Component } from 'react'
@@ -65,14 +65,10 @@ class App extends Component {
                     } */}
                     {   !this.state.isShowImg && 
                         <Switch>
-                            {/* <Route path='/' component={App}> */}
-                                {/* <IndexRoute component={Home} /> */}
-                                {
-                                    Routes.map(({path, component},idx) => <Route key={idx} exact path={path} component={component}></Route>)
-                                }
-                                <Redirect from="/" to="/index/0" />
-                                {/* <Redirect from="/index" to="/index/0" /> */}
-                            {/* </Route> */}
+                            {
+                                Routes.map(({path, component},idx) => <Route key={idx} exact path={path} component={component}></Route>)
+                            }
+                            <Redirect from="/*" to="/index" />
                         </Switch>
                     }
                 </div>
