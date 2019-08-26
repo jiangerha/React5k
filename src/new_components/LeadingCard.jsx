@@ -53,6 +53,7 @@ export default class Main extends React.Component{
         Toast.loading('加载中...', 0, null, true)
         try{
             const {data:{list, currentPage, pageSize, totalPage, totalCount},success} = await Http('get',api.list,{columnId:columnId1,currentPage:pagination.currentPage,pageSize:pagination.pageSize});
+            console.log(list,'lst')
             success && this.setState({
                 list:[
                     ...this.state.list,

@@ -11,6 +11,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as routerAction from '@actions/routerAction'
 import BgImg from '../../../common/imgs/lifeService/bg-img.png'
+import IsDevingIcon from '@/common/imgs/deving.png'
 import './index.scss'
 
 const iconUrls = ['https://www.jkwin.com.cn/ystm/org.do?index=1&regWayCode=WX&method=toOrgPage','https://m.ctrip.com/','http://cq.12348.gov.cn/wechat/app_chongqing/homeUser.html','javascrpt:;']
@@ -43,8 +44,8 @@ class Main extends React.PureComponent{
     }
     render(){
         return(
-            <div className="life-service">
-                <div className="bg-box">
+            <div className="life-service district">
+                {/* <div className="bg-box">
                     <img src={BgImg} alt=""/>
                 </div>
                 <div className="icon-list">
@@ -58,6 +59,10 @@ class Main extends React.PureComponent{
                     {
                         imgData.map((i,idx) => <Item key={idx} {...i}/>)
                     }
+                </div> */}
+                <div className="deving-box">
+                    <img src={IsDevingIcon} alt=""/>
+                    <p>正在开发中，敬请期待</p>
                 </div>
             </div>
         )

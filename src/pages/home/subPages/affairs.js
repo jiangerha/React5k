@@ -19,11 +19,15 @@ class Main extends React.PureComponent{
         routerCon.map(i => i.path === pathname && (document.title = i.name.indexOf('红岩青松-') > -1 ? i.name : `红岩青松-${i.name}`))
     }
     render(){
+        const {pathname} = this.props.location;
         return(
             <div className="leader-calender margin5px wtf">
-                <Scroll>
-                    <LeadingCard {...this.props}/>
-                </Scroll>
+                {
+                    pathname === "/worksExhibi" ? <LeadingCard {...this.props}/> : 
+                    <Scroll>
+                        <LeadingCard {...this.props}/>
+                    </Scroll>
+                }
             </div>
         )
     }

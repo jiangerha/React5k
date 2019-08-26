@@ -33,7 +33,7 @@ const CardItem = (props) => {
                 <img src={ManIcon}/>
                 <div className="card-extra">
                     <p>{`姓名:${data.member_name || data.teamName}`}</p>
-                    <p className="extra">{`职务:${data.tel}`}</p>
+                    {/* <p className="extra">{`职务:${data.tel}`}</p> */}
                     <p className="extra">{`电话:${data.tel}`}</p>
                 </div>
             </div>
