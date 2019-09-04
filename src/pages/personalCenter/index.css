@@ -196,6 +196,11 @@
   color: #fff;
 }
 
+.personal-sugge .extra-text {
+  padding: 0 12px;
+  color: #999;
+}
+
 .personal-find-frind .am-list-body > div:first-child .am-input-label.am-input-label-5:before {
   content: '*';
   color: #FF523A;

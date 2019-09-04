@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-08 20:16:55
- * @LastEditTime: 2019-08-25 11:40:21
+ * @LastEditTime: 2019-09-04 23:07:08
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -18,7 +18,7 @@ import './index.scss'
 const Item = List.Item;
 
 const urlList = ['/message','/suggestion','/problem','/findFriend']
-const gridText = ['消息通知','意见建议','困难问题','寻找好友'];
+const gridText = ['消息通知','建议','问题','寻找好友'];
 const gridData = Array.from(new Array(4)).map((_val, i) => ({
     icon: require(`../../common/imgs/personal/icon-${i}.png`),
     text: gridText[i],

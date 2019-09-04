@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 13:10:58
- * @LastEditTime: 2019-08-26 23:43:23
+ * @LastEditTime: 2019-09-04 23:11:41
  * @LastEditors: Please set LastEditors
  */
 
@@ -214,12 +214,12 @@ const routes = [
         component:PersonalMessage
     },
     {
-        name:'意见建议',
+        name:'建议',
         path:'/personal/suggestion',
         component:PersonalSugge
     },
     {
-        name:'困难问题',
+        name:'问题',
         path:'/personal/problem',
         component:PersonalPro
     },

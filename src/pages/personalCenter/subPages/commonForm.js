@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 11:36:48
- * @LastEditTime: 2019-08-19 20:09:37
+ * @LastEditTime: 2019-09-04 23:19:45
  * @LastEditors: Please set LastEditors
  */
 import React from 'react'
@@ -12,6 +12,7 @@ import { createForm } from 'rc-form';
 import api from '@/httpTool/httpUrls'
 import Http from '@/httpTool/http'
 const {problem, suggestion} = api;
+const textArr = ['如对本信息化平台有任何建议，请在此处提交，我们将认真吸纳，加以整改优化。','如发现本信息化平台存在的任何问题，请在此处提交，我们将及时整改优化。']
 
 class Main extends React.Component {
     state = {
@@ -47,6 +48,7 @@ class Main extends React.Component {
   }
   render() {
     const { getFieldProps } = this.props.form;
+    const {type} = this.props;
     return (
       <div className="personal-sugge">
         <TextareaItem
@@ -63,6 +65,7 @@ class Main extends React.Component {
             placeholder="选填，方便我们联系你"
           >手机号码</InputItem> */}
           <Button onClick={this.submit}>提交</Button>
+          <p className="extra-text">{type === "problem" ? textArr[1] : textArr[0]}</p>
           <Modal
             visible={this.state.visible}
             transparent
