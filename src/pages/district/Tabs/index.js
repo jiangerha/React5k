@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-10 14:49:17
- * @LastEditTime: 2019-08-25 12:03:58
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2019-12-23 21:48:15
+ * @LastEditors  : Please set LastEditors
  */
 import React from 'react';
 import config from './config';
@@ -32,6 +32,18 @@ const TabExample = () => (
       <div className="deving-box">
         <img src={IsDevingIcon} alt=""/>
         <p>正在开发中，敬请期待</p>
+      </div>
+      <div className="deving-box">
+        <img src={IsDevingIcon} alt=""/>
+        <p>正在开发中，敬请期待</p>
+      </div>
+      <div className="deving-box">
+        <img src={IsDevingIcon} alt=""/>
+        <p>正在开发中，敬请期待</p>
+      </div>
+      <div className="deving-box">
+        <img src={IsDevingIcon} alt=""/>
+        <p>正在开发中</p>
       </div>
       {/* <Scroll>
         <Grid data={gridData} columnNum={3} hasLine={false} activeStyle={false} />

@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 20:34:27
- * @LastEditTime: 2019-08-26 23:42:58
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2019-12-23 22:01:24
+ * @LastEditors  : Please set LastEditors
  */
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
@@ -34,7 +34,7 @@ class App extends Component {
     componentDidMount = () => {
         const {hideAd} = this.props;
         setTimeout(() => this.setState({isShowImg:false},hideAd.hideAd), 3000);
-        this.isLogin()
+        // this.isLogin()
     }
     isLogin = () => {
         const storage = window.localStorage;
