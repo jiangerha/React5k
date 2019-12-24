@@ -34,7 +34,7 @@ class App extends Component {
     componentDidMount = () => {
         const {hideAd} = this.props;
         setTimeout(() => this.setState({isShowImg:false},hideAd.hideAd), 3000);
-        // this.isLogin()
+        this.isLogin()
     }
     isLogin = () => {
         const storage = window.localStorage;

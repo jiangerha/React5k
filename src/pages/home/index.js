@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-06 20:55:03
- * @LastEditTime : 2019-12-23 21:44:58
+ * @LastEditTime : 2019-12-24 15:45:35
  * @LastEditors  : Please set LastEditors
  */
 import React from 'react'
@@ -34,7 +34,7 @@ class Main extends React.PureComponent {
         if(!userName || !userPwd){
             Toast.fail('请先登录',1)
             isLoad = false;
-            // this.props.history.push('/login')
+            this.props.history.push('/login')
         }
         return isLoad
     }
