@@ -30,6 +30,7 @@ import PersonalFriend from './personalCenter/subPages/findFriend'
 import ChangePwd from './personalCenter/subPages/changePwd'
 import NewPhone from './personalCenter/subPages/newPhone'
 import Agreement from './personalCenter/subPages/agreement'
+import PensionAgency from '@pages/home/subPages/PensionAgency'
 
 import Announcement from './announcement/index'
 import District from './district/index'
@@ -202,6 +203,11 @@ const routes = [
         name:'生活服务',
         path:'/lifeService',
         component:LifeService
+    },
+    {
+        name:'养老机构',
+        path:'/lifeService/pensionAgency',
+        component:PensionAgency
     },
     {
         name:'个人中心',
